@@ -1,0 +1,71 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file    usart.h
+  * @brief   This file contains all the function prototypes for
+  *          the usart.c file
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2024 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __USART_H__
+#define __USART_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "string.h"
+#include "stdio.h"
+/* USER CODE BEGIN Includes */
+#define uchar    unsigned char
+#define uint8    unsigned char
+#define uint16   unsigned short int
+#define uint32   unsigned long
+#define int16    short int
+#define int32    long
+/* USER CODE END Includes */
+
+extern UART_HandleTypeDef huart7_4G;
+extern UART_HandleTypeDef huart8_LoRA;
+extern UART_HandleTypeDef huart1_test;
+extern UART_HandleTypeDef huart2_RS485;
+extern UART_HandleTypeDef huart3_NB;
+extern UART_HandleTypeDef huart6_Screen;
+
+
+/* USER CODE BEGIN Private defines */
+
+/* USER CODE END Private defines */
+
+void MX_UART5_Init(void);
+void MX_UART7_Init(void);
+void MX_UART8_Init(int baud);
+void MX_USART1_UART_Init(void);
+void MX_USART2_UART_Init(int baud);
+void MX_USART3_UART_Init(void);
+void MX_USART6_UART_Init(void);
+
+/* USER CODE BEGIN Prototypes */
+void SendChar(uchar t);
+int fputc(int ch, FILE *f);
+/* USER CODE END Prototypes */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __USART_H__ */
+
